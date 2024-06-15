@@ -18,3 +18,7 @@
     conflictstyle = diff3
 [diff]
     colorMoved = default
+[include]
+    path=~/personal/.gitconfig
+[include]
+    path=~/work/.gitconfig
