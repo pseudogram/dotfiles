@@ -45,8 +45,7 @@ fi
 # pyenv
 # postgresql@14
 
-apt-get update; sudo apt-get install stow neovim fd tealdeer tree jq direnv ripgrep git-delta
-powerlevel10k
+sudo apt-get update; sudo apt-get install stow neovim fd tealdeer tree jq direnv ripgrep git-delta powerlevel10k
 
 echo "________________________________________
 INSTALL SCRIPT: ZSH Start
