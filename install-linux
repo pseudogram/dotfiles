@@ -44,13 +44,9 @@ fi
 # readline
 # pyenv
 # postgresql@14
-sudo apt-get update; sudo apt-get install stow neovim fd fzf tealdeer tree jq direnv ripgrep git-delta
-powerlevel10k
-# CONFIG_DIRECTORY="$(dirname $0)"
-# CONF_ZSHRC=$CONFIG_DIRECTORY/zshrc
-# ln -s $CONF_ZSHRC ~/.zshrc
 
-#!/bin/bash
+apt-get update; sudo apt-get install stow neovim fd tealdeer tree jq direnv ripgrep git-delta
+powerlevel10k
 
 echo "________________________________________
 INSTALL SCRIPT: ZSH Start
@@ -62,11 +58,9 @@ INSTALL SCRIPT: ZSH Start
 
 if ! [ -d $HOME/.oh-my-zsh ] ; then
     echo "INSTALL SCRIPT:  ohmyzsh not installed. Retrieving and running install script"
-    
+
     # Install script from https://ohmyz.sh/#install
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
-    sudo mv $HOME/.zshrc $HOME.zshrc.post-oh-my-zsh
-    sudo mv $HOME/.zshrc.pre-oh-my-zsh $HOME/.zshrc
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --keep-zshrc --unattended
 else
     echo "INSTALL SCRIPT: ohmyzsh installed"
 fi
@@ -75,6 +69,7 @@ echo "
 INSTALL SCRIPT: ZSH Finish
 ________________________________________"
 
+./fzf/install --all
 
 # to make file executeable run:
 # chmod u+x <file_name>
