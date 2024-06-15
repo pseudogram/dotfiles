@@ -1,0 +1,18 @@
+[submodule "dot-config/nvim"]
+	path = dot-config/nvim
+	url = https://github.com/pseudogram/nvim.config.git
+[submodule "dot-oh-my-zsh/custom/themes/powerlevel10k"]
+	path = dot-oh-my-zsh/custom/themes/powerlevel10k
+	url = https://github.com/romkatv/powerlevel10k.git
+[submodule "dot-tmux-themepack"]
+	path = dot-tmux-themepack
+	url = https://github.com/jimeh/tmux-themepack.git
+[submodule "home/dot-config/nvim"]
+	path = home/dot-config/nvim
+	url = https://github.com/pseudogram/nvim.config.git
+[submodule "home/dot-oh-my-zsh/custom/themes/powerlevel10k"]
+	path = home/dot-oh-my-zsh/custom/themes/powerlevel10k
+	url = https://github.com/romkatv/powerlevel10k.git
+[submodule "home/dot-tmux-themepack"]
+	path = home/dot-tmux-themepack
+	url = https://github.com/jimeh/tmux-themepack.git

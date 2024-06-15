@@ -1,0 +1,35 @@
+#!/bin/zsh
+
+# # Programs you need
+# stow
+# neovim
+# bat
+# xz
+# openssl
+# fd
+# fzf
+# gdbm
+# gh
+# git-delta
+# grex
+# md5sha1sum
+# pkg-config
+# pyenv
+# tag
+# tcl-tk
+# tealdeer
+# tmux
+# tree
+# watchman
+# yarn
+# docker
+# jq
+# dirnv
+# ripgrep
+# readline
+# pyenv
+# postgresql@14
+
+# Linux specific
+# FZF keybindings
+source /usr/share/doc/fzf/examples/key-bindings.zsh
