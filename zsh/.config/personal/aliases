@@ -1,3 +1,5 @@
+#!/usr/bin/zsh
+
 # Docker aliases
 alias dc=docker-compose
 alias dk=docker

@@ -1,3 +1,5 @@
+#!/usr/bin/zsh
+#
 # Set Python version
 # https://opensource.com/article/20/4/pyenv
 # https://realpython.com/intro-to-pyenv/#installing-pyenv

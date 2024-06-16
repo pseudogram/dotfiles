@@ -1,24 +1,65 @@
-#!/bin/bash
+#!/usr/bin/zsh
+
+batless() {
+  bat --color=always $1|less -R
+}
+
+addToPathFront() {
+  if [[ "$PATH" != *"$1"*  ]]; then
+    export PATH=$1:$PATH
+  fi
+}
+
+# Make and cd into directory
+# https://unix.stackexchange.com/a/125386
+mcd ()
+{
+  mkdir -p -- "$1" &&
+    cd -P -- "$1"
+}
+
+# Git worktree clone. Sets up everything to get tarted in a repo
+wclone(){
+  # Get repo name
+  url=$1
+  basename=$(basename $url)
+  echo $basename
+  filename=${basename%.*}
+  echo Cloning to file: $filename
+  # extension=${basename##*.}
+  # echo $extension
+
+  # Make direcotry
+  mkdir $filename
+  cd $filename
+  git clone $url .bare --bare
+  ln -s .bare .git
+
+  # Add some default branches to work with
+  git worktree add main
+  git worktree add current
+  git worktree add hotfix
+}
 
 # To determine out where a process has been run from use ${PWD}
 # echo "Script executed from: ${PWD}"
-# 
+#
 # To figure out the directory of a file that's been executed run:
 BASEDIR=$(dirname $0)
 # echo "Script location: ${BASEDIR}"
-# 
+#
 # Note: BASEDIR does not change when running a file within a file.
 
 
 # Sends a notification banner to mac os
-# 
+#
 # Sounds can be found in:
 #    /System/Library/Sounds
 #    ~/Library/Sounds
-# 
+#
 # References:
 #     https://apple.stackexchange.com/questions/57412/how-can-i-trigger-a-notification-center-notification-from-an-applescript-or-shel
-# 
+#
 # Args:
 #   $1:message      eg. "What email would you like to use for your global git config?"
 #   $2:title        eg. "Shell Install Script"
@@ -40,7 +81,7 @@ function mac_notification_banner()
 
 
 # Make a sound
-# 
+#
 # References:
 #   https://stackoverflow.com/questions/1143386/in-a-bash-script-command-how-can-i-make-a-pc-beep-noise-or-play-a-sound-file
 function make_sound()
@@ -49,7 +90,7 @@ function make_sound()
 }
 
 # Makes a sound, reads message then takes user input and returns it in the variable $user_input
-# 
+#
 # Args:
 #     $1:message    eg. "What email your email?"
 #
@@ -63,8 +104,8 @@ function get_user_input(){
     read user_input
 }
 
-# Checks for a file, if it exists moves it to the same location with .pre-install appended to file name 
-# 
+# Checks for a file, if it exists moves it to the same location with .pre-install appended to file name
+#
 # Args:
 #     $1:file_at    eg. "What email your email?"
 #
@@ -73,7 +114,7 @@ function get_user_input(){
 function backup_and_move_existing_file(){
     file_path=$1
     if [[ -e $file_path || -f $file_path ]] ; then
-        
+
         echo "$file_path found, moving to $file_path.pre-install"
 
         mv $file_path $file_path.pre-install
