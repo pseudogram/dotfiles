@@ -1,0 +1,17 @@
+#!/usr/bin/env zsh
+
+# see install-linux for full details
+# install binaries using apt get
+# install fzf using install script
+# install zsh, and change shell
+# install ohmyzsh
+
+if [[ -z $STOW_FOLDERS ]]; then
+    STOW_FOLDERS="bin,git,nvim,personal,tmux,zsh"
+fi
+
+if [[ -z $DOTFILES ]]; then
+    DOTFILES=$HOME/dotfiles
+fi
+
+STOW_FOLDERS=$STOW_FOLDERS DOTFILES=$DOTFILES $DOTFILES/install
