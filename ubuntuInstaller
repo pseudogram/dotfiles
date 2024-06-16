@@ -1,17 +1,57 @@
 #!/usr/bin/env zsh
 
-# see install-linux for full details
-# install binaries using apt get
-# install fzf using install script
-# install zsh, and change shell
-# install ohmyzsh
-
-if [[ -z $STOW_FOLDERS ]]; then
-    STOW_FOLDERS="bin,git,nvim,personal,tmux,zsh"
-fi
-
 if [[ -z $DOTFILES ]]; then
     DOTFILES=$HOME/dotfiles
 fi
 
-STOW_FOLDERS=$STOW_FOLDERS DOTFILES=$DOTFILES $DOTFILES/install
+# install binaries using apt get
+# -----------------------------------------------------------------------------
+#                                  zsh
+# -----------------------------------------------------------------------------
+if [[ ! $(command -v zsh) ]]; then
+    echo "installing zsh"
+    sudo apt-get update; sudo apt-get install zsh
+    chsh -s $(which zsh)
+else
+    echo "zsh already installed"
+fi
+
+# change default shell
+if [[ ! $SHELL == *"zsh"* ]]; then
+    echo "setting default shell to zsh"
+    chsh -s $(which zsh)
+fi
+
+# -----------------------------------------------------------------------------
+#                               packages
+# -----------------------------------------------------------------------------
+
+if [[ -z $PACKAGES ]]; then
+    # stow, neovim, bat, xz, openssl, fd, fzf, gdbm, gh, git-delta, grex, md5sha1sum,
+    # pkg-config, pyenv, tag, tcl-tk, tealdeer, tmux, tree, watchman, yarn, docker,
+    # jq, direnv, ripgrep, readline, pyenv, postgresql@14
+    PACKAGES="stow,neovim,bat,fd-find,tealdeer,tree,jq,direnv,ripgrep,git-delta"
+fi
+
+sudo PACKAGES=$PACKAGES $DOTFILES/debian
+
+# -----------------------------------------------------------------------------
+#                                 stow
+# -----------------------------------------------------------------------------
+
+if [[ -z $STOW_FOLDERS ]]; then
+    # ohmyzsh must be installed before zsh
+    STOW_FOLDERS="bin,git,nvim,personal,tmux,zsh"
+fi
+
+
+STOW_FOLDERS=$STOW_FOLDERS DOTFILES=$DOTFILES $DOTFILES/stow
+
+
+# -----------------------------------------------------------------------------
+#                                  fzf
+# -----------------------------------------------------------------------------
+
+if [[ ! $(command -v fzf) ]] ; then
+    ./fzf/install --all
+fi

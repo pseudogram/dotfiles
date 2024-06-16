@@ -1,0 +1,10 @@
+#!/usr/bin/env zsh
+#
+for package in $(echo $PACKAGES | sed "s/,/ /g")
+do
+    # to stop printing of installed, add `&>/dev/null` after grep
+    if ! apt list $package 2>/dev/null|grep $package; then
+        echo "\ninstalling $package"
+        sudo apt-get install $package
+    fi
+done
