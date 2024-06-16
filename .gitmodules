@@ -11,5 +11,5 @@
 	path = fzf
 	url = https://github.com/junegunn/fzf.git
 [submodule "bbg"]
-    path = bbg
-    url = git@bbgithub.dev.bloomberg.com:dattlee/bloomberg-config.git
+	path = bbg
+	url = git@bbgithub.dev.bloomberg.com:dattlee/bloomberg-config.git
