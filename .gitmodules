@@ -1,8 +1,8 @@
-[submodule "dot-config/nvim"]
-	path = dot-config/nvim
+[submodule "nvim/.config/nvim"]
+	path = nvim/.config/nvim
 	url = https://github.com/pseudogram/nvim.config.git
-[submodule "dot-tmux-themepack"]
-	path = dot-tmux-themepack
+[submodule "tmux/.tmux-themepack"]
+	path = tmux/.tmux-themepack
 	url = https://github.com/jimeh/tmux-themepack.git
 [submodule ".oh-my-zsh/custom/themes/powerlevel10k"]
 	path = .oh-my-zsh/custom/themes/powerlevel10k
