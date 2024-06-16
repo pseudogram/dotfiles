@@ -4,3 +4,4 @@ install.*
 fzf
 .*.swp$
 .gitignore
+.gitmodules
