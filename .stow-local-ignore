@@ -5,3 +5,9 @@ fzf
 .*.swp$
 .gitignore
 .gitmodules
+bin
+jetbrains
+macOS
+vim
+vscode
+zsh
