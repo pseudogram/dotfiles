@@ -1,6 +1,14 @@
 # Install
 
 - install stow first...
+    ```sh
+    git submodule update --init \
+        .oh-my-zsh/custom/themes/powerlevel10k \
+        dot-config/nvim \
+        dot-tmux-themepack \
+        fzf \
+        bbg # remove this line if on a personal machine
+    ```
 - test stow command
     1. `stow --simulate -v --dotfiles --adopt . --ignore='install.*`
     2. `stow --simulate -v --dotfiles --adopt .`
