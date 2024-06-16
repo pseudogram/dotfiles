@@ -4,8 +4,8 @@
 [submodule "tmux/.tmux-themepack"]
 	path = tmux/.tmux-themepack
 	url = https://github.com/jimeh/tmux-themepack.git
-[submodule ".oh-my-zsh/custom/themes/powerlevel10k"]
-	path = .oh-my-zsh/custom/themes/powerlevel10k
+[submodule "zsh/.oh-my-zsh/custom/themes/powerlevel10k"]
+	path = zsh/.oh-my-zsh/custom/themes/powerlevel10k
 	url = https://github.com/romkatv/powerlevel10k.git
 [submodule "fzf"]
 	path = fzf
@@ -16,3 +16,6 @@
 [submodule "personal"]
 	path = personal
 	url = https://github.com/pseudogram/personal-dotfiles.git
+[submodule "ohmyzsh/.oh-my-zsh"]
+	path = ohmyzsh/.oh-my-zsh
+	url = https://github.com/ohmyzsh/ohmyzsh.git
