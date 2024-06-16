@@ -67,8 +67,27 @@ fi
 echo "
 INSTALL SCRIPT: ZSH Finish
 ________________________________________"
+# echo "________________________________________
+# INSTALL SCRIPT: VIM Start
+# "
 
-./fzf/install --all
+# # Setup work dotfiles
+# if [ -L $HOME/dotfiles/work/.gitkeep ] ; then
+#     stow -v --dotfiles --adopt work
+# fi
+
+# # Setup personal dotfiles
+# if [ -L $HOME/dotfiles/personal/.gitkeep ] ; then
+#     stow -v --dotfiles --adopt personal
+# fi
+
+# echo "
+# INSTALL SCRIPT: VIM Finish
+# ________________________________________"
+
+if [[ ! $(command -v fzf) ]] ; then
+    ./fzf/install --all
+fi
 
 # to make file executeable run:
 # chmod u+x <file_name>

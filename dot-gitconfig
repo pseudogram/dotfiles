@@ -3,9 +3,6 @@
 
 [init]
     defaultBranch = main
-[user]
-    name = pseudogram
-    email = pseudogrammer@gmail.com
 [core]
     pager = delta
 [interactive]
@@ -18,7 +15,9 @@
     conflictstyle = diff3
 [diff]
     colorMoved = default
+
 [include]
     path=~/personal/.gitconfig
+# Work git config takes precidence
 [include]
     path=~/work/.gitconfig

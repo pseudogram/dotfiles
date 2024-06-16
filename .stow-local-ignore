@@ -3,3 +3,4 @@ README.*
 install.*
 fzf
 .*.swp$
+.gitignore
