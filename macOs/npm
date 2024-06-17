@@ -1,0 +1,7 @@
+#!/bin/zsh
+source $HOME/dotfiles/macos/utils
+
+echo_ok "Installing global npm packages..."
+
+npm install -g aws-sam-local
+npm install -g spaceship-prompt

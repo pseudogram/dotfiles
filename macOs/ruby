@@ -1,0 +1,9 @@
+#!/bin/zsh
+source $HOME/dotfiles/macos/utils
+
+echo_ok "Installing Ruby gems"
+RUBY_GEMS=(
+	bundler
+	rake
+)
+sudo gem install "${RUBY_GEMS[@]}"

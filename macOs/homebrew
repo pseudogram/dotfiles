@@ -1,0 +1,254 @@
+#!/bin/zsh
+source $HOME/dotfiles/macos/utils
+
+TAPS=(
+  # homebrew/cask-fonts
+  # homebrew/bundle
+  # homebrew/services
+)
+
+CASKS=(
+    # arc
+    # alfred
+    # # google-chrome
+    # iterm2
+    # # slack
+    # spotify
+    # iterm2
+    # brave-browser
+    # karabiner-elements
+    # spotify
+    # # docker
+    # notunes
+    # # visual-studio-code
+    # dozer
+    # obs
+    # firefox
+    # postman
+    # google-drive
+    # obsidian
+    # bettertouchtool
+)
+
+FONTS=(
+    # font-meslo-lg-nerd-font
+
+	# font-clear-sans
+	# font-consolas-for-powerline
+	# font-dejavu-sans-mono-for-powerline
+	# font-fira-code
+	# font-fira-mono-for-powerline
+	# font-inconsolata
+	# font-inconsolata-for-powerline
+	# font-liberation-mono-for-powerline
+	# font-menlo-for-powerline
+	# font-roboto
+)
+
+PACKAGES=(
+    stow
+    bat
+    jq
+    fd
+    neovim
+    tree
+    tealdeer
+    direnv
+    ripgrep
+    git-delta
+
+    # aom
+    # libarchive
+    # openexr
+    # aribb24
+    # libass
+    # openjpeg
+    # autoconf
+    # libassuan
+    # openldap
+    # libb2
+    # openssl@1.1
+    # libbluray
+    # openssl@3
+    # libevent
+    # opus
+    # libgcrypt
+    # p11-kit
+    # berkeley-db
+    # libgit2
+    # boost
+    # libgpg-error
+    # pango
+    # brotli
+    # libidn2
+    # pcre2
+    # libksba
+    # perl
+    # c-ares
+    # libnghttp2
+    # pinentry
+    # ca-certificates
+    # libogg
+    # pixman
+    # cairo
+    # libpng
+    # pkg-config
+    # cjson
+    # librist
+    # pnpm
+    # cmake
+    # libsamplerate
+    # postgresql@11
+    # coreutils
+    # libsndfile
+    # pyenv
+    # dav1d
+    # libsodium
+    # python@3.11
+    # libsoxr
+    # python@3.12
+    # double-conversion
+    # libssh2
+    # python@3.8
+    # edencommon
+    # libtasn1
+    # python@3.9
+    # fb303
+    # libtermkey
+    # rav1e
+    # fbthrift
+    # libtiff
+    # readline
+    # libunibreak
+    # redis
+    # ffmpeg
+    # libunistring
+    # ffmpeg@4
+    # libusb
+    # rubberband
+    # fizz
+    # libuv
+    # ruby-build
+    # flac
+    # libvidstab
+    # sdl2
+    # fmt
+    # libvmaf
+    # shared-mime-info
+    # folly
+    # libvorbis
+    # snappy
+    # fontconfig
+    # libvpx
+    # speex
+    # freetype
+    # libvterm
+    # sqlite
+    # frei0r
+    # libx11
+    # srt
+    # fribidi
+    # libxau
+    # svt-av1
+    # fzf
+    # libxcb
+    # tag
+    # gawk
+    # libxdmcp
+    # tcl-tk
+    # gdbm
+    # libxext
+    # gettext
+    # libxrender
+    # terminal-notifier
+    # gflags
+    # libyaml
+    # tesseract
+    # gh
+    # little-cms2
+    # theora
+    # giflib
+    # luajit
+    # tmux
+    # gifski
+    # luv
+    # git
+    # lz4
+    # tree-sitter
+    # lzo
+    # unbound
+    # glib
+    # m4
+    # unibilium
+    # glog
+    # make
+    # utf8proc
+    # gmp
+    # mbedtls
+    # wangle
+    # gnupg
+    # # md5sha1sum
+    # watchman
+    # gnutls
+    # mpdecimal
+    # webp
+    # graphite2
+    # mpfr
+    # x264
+    # grex
+    # mpg123
+    # x265
+    # harfbuzz
+    # msgpack
+    # xorgproto
+    # highway
+    # ncurses
+    # xvid
+    # icu4c
+    # xz
+    # imath
+    # nettle
+    # yarn
+    # jpeg-turbo
+    # ninja
+    # zeromq
+    # jpeg-xl
+    # zimg
+    # zlib
+    # krb5
+    # npth
+    # zstd
+    # lame
+    # oniguruma
+    # leptonica
+    # opencore-amr
+)
+
+if [[ ! ${#TAPS[@]} -eq 0 ]]; then
+    echo_ok "Adding taps..."
+    for tap in "${TAPS[@]}"; do
+        brew tap "$tap"
+    done
+fi
+
+
+
+if [[ ! ${#PACKAGES[@]} -eq 0 ]]; then
+    echo_ok "Installing packages..."
+    brew install "${PACKAGES[@]}"
+fi
+
+echo_ok "Cleaning up..."
+brew cleanup
+
+if [[ ! ${#CASKS[@]} -eq 0 ]]; then
+    echo_ok "Installing cask apps..."
+    brew install --cask "${CASKS[@]}"
+fi
+
+if [[ ! ${#FONTS[@]} -eq 0 ]]; then
+    echo_ok "Installing fonts..."
+    brew tap homebrew/cask-fonts
+    brew install --cask "${FONTS[@]}"
+fi
+

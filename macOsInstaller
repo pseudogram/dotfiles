@@ -5,6 +5,29 @@
 # install fzf using install script
 # install zsh, and change shell
 
+if [[ -z $DOTFILES ]]; then
+    DOTFILES=$HOME/dotfiles
+fi
+
+echo_ok "Install starting. You may be asked for your password (for sudo)."
+# -----------------------------------------------------------------------------
+#                               packages
+# -----------------------------------------------------------------------------
+
+if [[ -z $PACKAGES ]]; then
+    # stow, neovim, bat, xz, openssl, fd, fzf, gdbm, gh, git-delta, grex,
+    # md5sha1sum, pkg-config, pyenv, tag, tcl-tk, tealdeer, tmux, tree,
+    # watchman, yarn, docker, jq, direnv, ripgrep, readline, pyenv,
+    # postgresql@14
+    PACKAGES="stow,neovim,bat,fd-find,tealdeer,tree,jq,direnv,ripgrep,git-delta"
+fi
+
+
+DOTFILES=$DOTFILES $DOTFILES/macOs/bootstrap
+
+# -----------------------------------------------------------------------------
+#                                stow
+# -----------------------------------------------------------------------------
 if [[ -z $STOW_FOLDERS ]]; then
     # ohmyzsh must be installed before zsh
     STOW_FOLDERS="bin,git,nvim,personal,tmux,ohmyzsh,zsh"
@@ -15,3 +38,14 @@ if [[ -z $DOTFILES ]]; then
 fi
 
 STOW_FOLDERS=$STOW_FOLDERS DOTFILES=$DOTFILES $DOTFILES/stow
+
+
+# -----------------------------------------------------------------------------
+#                                  fzf
+# -----------------------------------------------------------------------------
+
+if [[ ! $(command -v fzf) ]] ; then
+    ./fzf/install --all
+fi
+
+echo_ok "Bootstrapping complete"

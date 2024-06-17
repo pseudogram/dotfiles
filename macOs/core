@@ -1,0 +1,7 @@
+#!/bin/zsh
+
+# requires xcode and tools!
+xcode-select -p || exit "XCode must be installed! (use the app store)"
+
+echo_ok 'Running OSX Software Updates...'
+sudo softwareupdate -i -a

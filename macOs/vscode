@@ -1,0 +1,58 @@
+#!/bin/zsh
+source $HOME/dotfiles/macos/utils
+
+echo_ok "Installing VS Code Extensions..."
+
+VSCODE_EXTENSIONS=(
+	AlanWalk.markdown-toc
+	CoenraadS.bracket-pair-colorizer
+	DavidAnson.vscode-markdownlint
+	DotJoshJohnson.xml
+	EditorConfig.EditorConfig
+	Equinusocio.vsc-material-theme
+	HookyQR.beautify
+	James-Yu.latex-workshop
+	PKief.material-icon-theme
+	PeterJausovec.vscode-docker
+	Shan.code-settings-sync
+	Zignd.html-css-class-completion
+	akamud.vscode-theme-onedark
+	akmittal.hugofy
+	anseki.vscode-color
+	arcticicestudio.nord-visual-studio-code
+	aws-scripting-guy.cform
+	bungcip.better-toml
+	christian-kohler.npm-intellisense
+	christian-kohler.path-intellisense
+	codezombiech.gitignore
+	dansilver.typewriter
+	dbaeumer.jshint
+	donjayamanne.githistory
+	dracula-theme.theme-dracula
+	eamodio.gitlens
+	eg2.vscode-npm-script
+	ipedrazas.kubernetes-snippets
+	loganarnett.lambda-snippets
+	lukehoban.Go
+	mohsen1.prettify-json
+	monokai.theme-monokai-pro-vscode
+	ms-python.python
+	ms-vscode.azure-account
+	msjsdiag.debugger-for-chrome
+	robertohuertasm.vscode-icons
+	robinbentley.sass-indented
+	waderyan.gitblame
+	whizkydee.material-palenight-theme
+	whtsky.agila-theme
+	zhuangtongfa.Material-theme
+	foxundermoon.shell-format
+	timonwong.shellcheck
+)
+
+if hash code &>/dev/null; then
+	echo_ok "Installing VS Code extensions..."
+	for i in "${VSCODE_EXTENSIONS[@]}"; do
+		code --install-extension "$i"
+	done
+fi
+
