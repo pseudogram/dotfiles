@@ -9,8 +9,9 @@
         fzf \
         bbg # remove this line if on a personal machine
     ```
-- Run environment stow command
-    - `./ubuntu`
+- Run installers
+    - `./ubuntuInstaller`
+    - `./macOsInstaller`
 <!-- - test stow command -->
 <!--     1. `stow --simulate -v --dotfiles --adopt . --ignore='install.*` -->
 <!--     2. `stow --simulate -v --dotfiles --adopt .` -->
