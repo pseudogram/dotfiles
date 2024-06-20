@@ -40,6 +40,9 @@ alias vim='nvim'
 alias vi='nvim'
 alias oldvim='\vim'
 alias vimf='nvim $(fzf --preview="bat --color=always --theme=gruvbox-dark --style=numbers {}")'
+# Added a handy lil remap <leader><leader>ZZ into nvim to save all buffers and close
+alias vimsesh='vim -S /tmp/session.vim'
+alias nvimsesh='nvim -S /tmp/session.vim'
 
 # other helpful things
 alias lg='ls -la|grep '
