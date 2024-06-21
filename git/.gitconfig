@@ -20,4 +20,4 @@
     path=~/.local/git/personal.gitconfig
 # Work git config takes precidence
 [include]
-    path=~/.local/git/work.gitconfig
+    path=~/.local/git/bbg.gitconfig
