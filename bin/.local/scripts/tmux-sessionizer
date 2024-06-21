@@ -11,8 +11,8 @@ if [[ $# -eq 1  ]]; then
   selected=$1
 else
   selected=$({find ~  -mindepth 1 -maxdepth 1 -type d;
-              find ~/Developer -mindepth 1 -maxdepth 3 -type d;
-              find ~/Projects -mindepth 1 -maxdepth 3 -type d;
+              find ~/Developer -mindepth 1 -maxdepth 2 -type d;
+              find ~/Projects -mindepth 1 -maxdepth 2 -type d;
               special_extra_directories;} | fzf)
 fi
 
