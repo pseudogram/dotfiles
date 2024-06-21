@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 # Mac OS Specific
 if command -v sw-vers &>/dev/null; then
     # Add homebrew to PATH
@@ -26,6 +28,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Set this variable as an env variable during install
 PERSONAL=$HOME/.config/personal
+BBG=$HOME/.config/bbg
 
 source $PERSONAL/aliases
 source $PERSONAL/env
@@ -33,7 +36,7 @@ source $PERSONAL/utils
 # source $PERSONAL/nvm
 # source $PERSONAL/nx-cache-hook
 # source $PERSONAL/pyenv
-# source ~/work-config/macbook.zshrc
+source $BBG/zshrc
 
 # Directory settings used for NX cache and/or NVM
 # source $PERSONAL/nx-cache-hook
