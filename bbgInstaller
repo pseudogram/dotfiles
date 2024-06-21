@@ -1,0 +1,7 @@
+#!/usr/bin/env zsh
+
+if [[ -z $DOTFILES ]]; then
+    DOTFILES=$HOME/dotfiles
+fi
+
+STOW_FOLDERS=$STOW_FOLDERS MODE=$MODE DOTFILES=$DOTFILES source $DOTFILES/bbg/.config/bbg/install
