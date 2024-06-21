@@ -1,7 +1,8 @@
 #!/bin/zsh
 
 # Mac OS Specific
-if command -v sw-vers &>/dev/null; then
+# if command -v sw-vers &>/dev/null; then
+if uname -a|grep -i darwin  &>/dev/null; then
     # Add homebrew to PATH
     eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
