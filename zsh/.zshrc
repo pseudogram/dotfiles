@@ -37,7 +37,9 @@ source $PERSONAL/utils
 # source $PERSONAL/nvm
 # source $PERSONAL/nx-cache-hook
 # source $PERSONAL/pyenv
-source $BBG/zshrc
+if [[ -f $BBG/zshrc ]]; then
+    source $BBG/zshrc
+fi
 
 # Directory settings used for NX cache and/or NVM
 # source $PERSONAL/nx-cache-hook
