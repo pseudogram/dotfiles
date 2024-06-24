@@ -14,8 +14,10 @@ alias rm='/bin/rm -iv'
 alias cl=clear
 
 # File shortcuts
-alias conf=$HOME/config-files
-alias vimconf=$HOME/config-files/nvim.config
+alias dot="tmux-sessionizer $HOME/dotfiles"
+alias dotvim="tmux-sessionizer $HOME/dotfiles/nvim/.config/nvim"
+alias dotbbg="tmux-sessionizer $HOME/dotfiles/bbg"
+alias dotzsh="tmux-sessionizer $HOME/dotfiles/zsh/.config/personal"
 
 # Python aliases
 alias p10=python3.10
