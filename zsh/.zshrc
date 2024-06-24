@@ -40,6 +40,9 @@ source $PERSONAL/utils
 if [[ -f $BBG/zshrc ]]; then
     source $BBG/zshrc
 fi
+if [[ -f $HOME/.config/ruby/zshrc ]]; then
+    source $HOME/.config/ruby/zshrc
+fi
 
 # Directory settings used for NX cache and/or NVM
 # source $PERSONAL/nx-cache-hook
