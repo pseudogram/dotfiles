@@ -31,7 +31,8 @@ CASKS=(
 )
 
 FONTS=(
-    # font-meslo-lg-nerd-font
+    font-meslo-lg-nerd-font
+    font-hack-nerd-font
 
 	# font-clear-sans
 	# font-consolas-for-powerline

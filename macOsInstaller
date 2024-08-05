@@ -22,7 +22,7 @@ if [[ -z $PACKAGES ]]; then
     # md5sha1sum, pkg-config, pyenv, tag, tcl-tk, tealdeer, tmux, tree,
     # watchman, yarn, docker, jq, direnv, ripgrep, readline, pyenv,
     # postgresql@14
-    PACKAGES="stow,neovim,bat,fd-find,tealdeer,tree,jq,direnv,ripgrep,git-delta"
+    PACKAGES="stow,neovim,bat,fd-find,tealdeer,tree,jq,direnv,ripgrep,git-delta,gdb"
 fi
 
 
