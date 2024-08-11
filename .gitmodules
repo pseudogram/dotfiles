@@ -1,21 +1,21 @@
 [submodule "nvim/.config/nvim"]
 	path = nvim/.config/nvim
-	url = git@github.com:pseudogram/nvim.config.git
+	url = https://github.com/pseudogram/nvim.config.git
 [submodule "tmux/.tmux-themepack"]
 	path = tmux/.tmux-themepack
-	url = git@github.com:jimeh/tmux-themepack.git
+	url = https://github.com/jimeh/tmux-themepack.git
 [submodule "zsh/.oh-my-zsh/custom/themes/powerlevel10k"]
 	path = zsh/.oh-my-zsh/custom/themes/powerlevel10k
-	url = git@github.com:romkatv/powerlevel10k.git
+	url = https://github.com/romkatv/powerlevel10k.git
 [submodule "fzf"]
 	path = fzf
-	url = git@github.com:junegunn/fzf.git
+	url = https://github.com/junegunn/fzf.git
 [submodule "bbg"]
 	path = bbg
-	url = git@bbgithub.dev.bloomberg.com:dattlee/bloomberg-config.git
+	url = https://bbgithub.dev.bloomberg.com/dattlee/bloomberg-config.git
 [submodule "personal"]
 	path = personal
-	url = git@github.com:pseudogram/personal-dotfiles.git
+	url = https://github.com/pseudogram/personal-dotfiles.git
 [submodule "ohmyzsh/.oh-my-zsh"]
 	path = ohmyzsh/.oh-my-zsh
-	url = git@github.com:ohmyzsh/ohmyzsh.git
+	url = https://github.com/ohmyzsh/ohmyzsh.git
