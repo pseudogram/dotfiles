@@ -1,5 +1,5 @@
 #!/bin/zsh
-source $HOME/dotfiles/macos/utils
+source $HOME/dotfiles/macOs/utils
 
 echo_ok "Installing VS Code Extensions..."
 
