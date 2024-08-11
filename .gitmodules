@@ -12,7 +12,7 @@
 	url = https://github.com/junegunn/fzf.git
 [submodule "bbg"]
 	path = bbg
-	url = https://bbgithub.dev.bloomberg.com/dattlee/bloomberg-config.git
+	url = git@bbgithub.dev.bloomberg.com:dattlee/bloomberg-config.git
 [submodule "personal"]
 	path = personal
 	url = https://github.com/pseudogram/personal-dotfiles.git
