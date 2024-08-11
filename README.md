@@ -2,7 +2,7 @@
 
 - Initialize all submodules
     ```sh
-    git submodule update --init \                                                                                                                                                                                                             00:15:13
+    git submodule update --init \
         zsh/.oh-my-zsh/custom/themes/powerlevel10k \
         nvim/.config/nvim \
         tmux/.tmux-themepack \
