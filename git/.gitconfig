@@ -21,3 +21,5 @@
 # Work git config takes precidence
 [include]
     path=~/.local/git/bbg.gitconfig
+[include]
+    path=~/.local/git/ssh.gitconfig
