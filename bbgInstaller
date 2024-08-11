@@ -4,6 +4,14 @@ if [[ -z $DOTFILES ]]; then
     DOTFILES=$HOME/dotfiles
 fi
 
+if [[ -z $MODE ]]; then
+    if uname -a|grep -i darwin  &>/dev/null; then
+        MODE=mac
+    else
+        MODE=spaces
+    fi
+fi
+
 pushd $DOTFILES
 git submodule update --init \
     zsh/.oh-my-zsh/custom/themes/powerlevel10k \
