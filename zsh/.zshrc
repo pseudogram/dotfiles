@@ -53,6 +53,10 @@ addToPathFront $HOME/.local/scripts
 bindkey -s ^f "tmux-sessionizer\n"
 bindkey -s ^s "tmux-session-finder\n"
 
+# always use utf-8 -- this prevents rendering issues in tmux
+export LC_ALL=en_IN.UTF-8
+export LANG=en_IN.UTF-8
+
 # # ASDF
 # . "$HOME/.asdf/asdf.sh"
 # # append completions to fpath
