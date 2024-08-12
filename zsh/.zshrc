@@ -37,12 +37,18 @@ source $PERSONAL/utils
 # source $PERSONAL/nvm
 # source $PERSONAL/nx-cache-hook
 # source $PERSONAL/pyenv
-if [[ -f $BBG/zshrc ]]; then
-    source $BBG/zshrc
-fi
+
+
 if [[ -f $HOME/.config/ruby/zshrc ]]; then
     source $HOME/.config/ruby/zshrc
 fi
+
+# this imports all all custom zsh files in .local ^^ should migrate stuff above
+for file in $(find $HOME/.local/zsh -type f); do
+    if [[ -f $file ]]; then
+        source $file;
+    fi
+done
 
 # Directory settings used for NX cache and/or NVM
 # source $PERSONAL/nx-cache-hook
@@ -52,10 +58,6 @@ addToPathFront $HOME/.local/scripts
 
 bindkey -s ^f "tmux-sessionizer\n"
 bindkey -s ^s "tmux-session-finder\n"
-
-# always use utf-8 -- this prevents rendering issues in tmux
-export LC_ALL=en_IN.UTF-8
-export LANG=en_IN.UTF-8
 
 # # ASDF
 # . "$HOME/.asdf/asdf.sh"
