@@ -41,5 +41,4 @@ bindkey -s ^s "tmux-session-finder\n"
 # fzf
 # . /usr/share/doc/fzf/examples/key-bindings.zsh
 # . /usr/share/doc/fzf/examples/completion.zsh
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh ### 🐞 this is causing --zsh issue
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
