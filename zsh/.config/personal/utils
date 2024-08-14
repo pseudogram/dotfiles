@@ -8,6 +8,17 @@ batless() {
   bat --color=always $1|less -R
 }
 
+# do not give this function a directory with a trailing slash
+function source_all_files_in_directory () {
+    if ! [[ -z "$(ls -A $1)" ]]; then
+        for file in $1/*; do
+            if [[ -f $file ]]; then
+                source $file;
+            fi
+        done
+    fi
+}
+
 addToPathFront() {
   if [[ "$PATH" != *"$1"*  ]]; then
     export PATH=$1:$PATH
