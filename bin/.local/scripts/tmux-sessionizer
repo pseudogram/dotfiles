@@ -2,6 +2,9 @@
 
 function special_extra_directories() {
     echo /Users/dattlee/config-files/nvim.config
+    if [[ -d /workarea ]]; then
+        find /workarea -mindepth 1 -maxdepth 1 -type d;
+    fi
 }
 
 # check the number of arguments passed to the script == 1
