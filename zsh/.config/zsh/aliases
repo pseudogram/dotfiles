@@ -65,3 +65,6 @@ alias brdb='bin/rails dbconsole'
 alias wp='bin/webpack-dev-server'
 alias shk='bin/shakapacker-dev-server'
 alias da='direnv allow'
+
+# execute a file from fuzzy finding
+alias ffc='fzf|xargs command'
