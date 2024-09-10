@@ -67,4 +67,4 @@ alias shk='bin/shakapacker-dev-server'
 alias da='direnv allow'
 
 # execute a file from fuzzy finding
-alias ffc='fzf|xargs command'
+alias ffc='find . -type f -executable -print|fzf|xargs command'
