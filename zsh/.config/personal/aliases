@@ -22,8 +22,9 @@ alias dotzsh="tmux-sessionizer $HOME/dotfiles/zsh/.config/personal"
 # Python aliases
 alias p10=python3.10
 alias p11=python3.11
-alias py=python3.11
-alias bpy='python3.11 -m bpython'
+alias p12=python3.12
+alias py=python3.12
+alias bpy='python3.12 -m bpython'
 
 # Git aliases
 alias gfu='git fetch upstream'
