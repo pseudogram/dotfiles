@@ -1,7 +1,17 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 
 if [[ -z $DOTFILES ]]; then
     DOTFILES=$HOME/dotfiles
 fi
 
-STOW_FOLDERS=$STOW_FOLDERS MODE=$MODE DOTFILES=$DOTFILES source $DOTFILES/bbg/.config/bbg/install
+pushd $DOTFILES
+git submodule update --init \
+    zsh/.oh-my-zsh/custom/themes/powerlevel10k \
+    nvim/.config/nvim \
+    tmux/.tmux-themepack \
+    fzf \
+    ohmyzsh/.oh-my-zsh \
+    bbg
+popd
+
+STOW_FOLDERS=$STOW_FOLDERS MODE=$MODE DOTFILES=$DOTFILES source $DOTFILES/bbg/install

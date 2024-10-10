@@ -1,7 +1,8 @@
 #!/bin/zsh
+source $HOME/.config/zsh/utils
 
-# Mac OS Specific
-# if command -v sw-vers &>/dev/null; then
+## Mac OS Specific
+## if command -v sw-vers &>/dev/null; then
 if uname -a|grep -i darwin  &>/dev/null; then
     # Add homebrew to PATH
     eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -26,42 +27,13 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-
-# Set this variable as an env variable during install
-PERSONAL=$HOME/.config/personal
-BBG=$HOME/.config/bbg
-
-source $PERSONAL/aliases
-source $PERSONAL/env
-source $PERSONAL/utils
-# source $PERSONAL/nvm
-# source $PERSONAL/nx-cache-hook
-# source $PERSONAL/pyenv
-if [[ -f $BBG/zshrc ]]; then
-    source $BBG/zshrc
-fi
-if [[ -f $HOME/.config/ruby/zshrc ]]; then
-    source $HOME/.config/ruby/zshrc
-fi
-
-# Directory settings used for NX cache and/or NVM
-# source $PERSONAL/nx-cache-hook
+source_all_files_in_directory $HOME/.config/zsh
 
 addToPathFront $HOME/.local/bin
 addToPathFront $HOME/.local/scripts
 
 bindkey -s ^f "tmux-sessionizer\n"
 bindkey -s ^s "tmux-session-finder\n"
-
-# # ASDF
-# . "$HOME/.asdf/asdf.sh"
-# # append completions to fpath
-# fpath=(${ASDF_DIR}/completions $fpath)
-# # initialise completions with ZSH's compinit
-# autoload -Uz compinit && compinit
-
-# # rbenv laoding
-# eval "$(rbenv init - zsh)"
 
 # # dir env for automatically loading ENV Variables when in directories.
 # eval "$(direnv hook zsh)"
