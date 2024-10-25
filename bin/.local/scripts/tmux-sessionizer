@@ -4,7 +4,7 @@ function special_extra_directories() {
     if [[ -d /workarea ]]; then
         find /workarea -mindepth 1 -maxdepth 1 -type d;
     fi
-    if [[  $SPACES_WORKAREA ]]
+    if [[  $SPACES_WORKAREA ]]; then
         echo $SPACES_WORKAREA
     fi
 }
