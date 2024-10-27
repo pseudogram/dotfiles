@@ -24,9 +24,9 @@ source $DOTFILES/macos/utils
 # - http://notes.jerzygangi.com/the-best-pgp-tutorial-for-mac-os-x-ever/
 
 
-# source $DOTFILES/macOs/core
+source $DOTFILES/macOs/core
 source $DOTFILES/macOs/homebrew
-# source $DOTFILES/macOs/osx-settings
+source $DOTFILES/macOs/osx-settings
 # source $DOTFILES/macOs/github
 # source $DOTFILES/macOs/npm
 # source $DOTFILES/macOs/python
