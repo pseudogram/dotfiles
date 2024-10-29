@@ -7,6 +7,9 @@ function special_extra_directories() {
     if [[  $SPACES_WORKAREA ]]; then
         echo $SPACES_WORKAREA
     fi
+    if [[  $SPACES__WORKAREA ]]; then
+        echo $SPACES__WORKAREA
+    fi
 }
 
 # check the number of arguments passed to the script == 1
