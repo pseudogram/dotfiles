@@ -4,14 +4,16 @@ if [[ -z $DOTFILES ]]; then
     DOTFILES=$HOME/dotfiles
 fi
 
-pushd $DOTFILES
-git submodule update --init \
-    zsh/.oh-my-zsh/custom/themes/powerlevel10k \
-    nvim/.config/nvim \
-    tmux/.tmux-themepack \
-    fzf \
-    ohmyzsh/.oh-my-zsh \
-    bbg
-popd
+if [[ -z $NO_GIT ]]; then
+    pushd $DOTFILES
+    git submodule update --init \
+        zsh/.oh-my-zsh/custom/themes/powerlevel10k \
+        nvim/.config/nvim \
+        tmux/.tmux-themepack \
+        fzf \
+        ohmyzsh/.oh-my-zsh \
+        bbg
+            popd
+fi
 
 STOW_FOLDERS=$STOW_FOLDERS MODE=$MODE DOTFILES=$DOTFILES source $DOTFILES/bbg/install
