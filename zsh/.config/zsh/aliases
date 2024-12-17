@@ -51,7 +51,10 @@ alias nvimsesh='nvim -S /tmp/session.vim'
 
 # other helpful things
 alias lg='ls -la|grep '
-alias ag='alias|grep '
+function ag {
+    echo "$*"
+    alias|grep "$*"
+}
 alias pn='pnpm'
 alias yi='yarn install'
 alias ya='yarn add'
