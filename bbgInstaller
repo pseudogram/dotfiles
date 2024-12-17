@@ -13,7 +13,7 @@ if [[ -z $NO_GIT ]]; then
         fzf \
         ohmyzsh/.oh-my-zsh \
         bbg
-            popd
+    popd
 fi
 
 STOW_FOLDERS=$STOW_FOLDERS MODE=$MODE DOTFILES=$DOTFILES source $DOTFILES/bbg/install
