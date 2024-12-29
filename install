@@ -37,12 +37,15 @@ function ubuntu_packages() {
 function stow() {
     if [[ -z $STOW_FOLDERS && $MODE = "mac" ]]; then
         # ohmyzsh must be installed before zsh
-        STOW_FOLDERS="bin,git,nvim,tmux,ohmyzsh,zsh,personal"
+        STOW_FOLDERS="bin,git,tmux,ohmyzsh,zsh,personal"
+        FOLDED_STOW_FOLDERS="nvim"
     elif [[ -z $STOW_FOLDERS && $MODE = "ubuntu" ]]; then
-        STOW_FOLDERS="bin,git,nvim,tmux,ohmyzsh,zsh"
+        STOW_FOLDERS="bin,git,tmux,ohmyzsh,zsh"
+        FOLDED_STOW_FOLDERS="nvim"
     fi
 
     STOW_FOLDERS=$STOW_FOLDERS DOTFILES=$DOTFILES $DOTFILES/stow
+    STOW_FOLDERS=$FOLDED_STOW_FOLDERS DOTFILES=$DOTFILES $DOTFILES/stow-fold
 }
 
 function fzf_install() {
