@@ -2,3 +2,5 @@
 
 export EDITOR=nvim
 
+# Used so that ctest always outputs coloured text
+export GTEST_COLOR=1
